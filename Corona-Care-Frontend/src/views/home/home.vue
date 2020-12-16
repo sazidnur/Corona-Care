@@ -172,7 +172,7 @@
           </div>
         </div>
       </div>
-      <img src="../../assets/static/happy_patient.jpg" class="img-fluid" />
+      <img src="../../assets/static/hpatient.jpg" class="img-fluid" />
     </div>
 
     <!-- User Stories -->
@@ -244,7 +244,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
-  background: url("../../assets/static/banner.jpg");
+  background: url("../../assets/static/cover.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
