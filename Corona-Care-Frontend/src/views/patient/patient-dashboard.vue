@@ -9,10 +9,10 @@
           </div>
           <div class="card-body text-center">
             <h2 class="text-capitalize mb-3">{{patient.fullname}}</h2>
-            <p class="mb-0">Running week 4</p>
+            <p class="mb-0">Age: {{patient.age}}</p>
             <p>
-              Expected delivery date:
-              <span class="text-success font-weight-bold">02 Aug 2020</span>
+              Expected disease:
+              <span class="text-success font-weight-bold">Corona Suspected</span>
             </p>
           </div>
         </div>

@@ -28,12 +28,12 @@
                   />
                 </div>
                 <div class="form-group mb-3">
-                  <small class="text-muted">Pregnancy week</small>
+                  <small class="text-muted">Body Temperature</small>
                   <input
                     type="number"
                     class="form-control shadow-none"
-                    placeholder="Week"
-                    v-model="reportData.pregnancyWeek"
+                    placeholder="Temperature"
+                    v-model="reportData.Temperature"
                   />
                 </div>
               </div>
@@ -79,7 +79,7 @@ export default {
       reportData: {
         weight: "",
         bloodPressure: "",
-        pregnancyWeek: "",
+        Temperature: "",
         symptoms: "",
         file: ""
       },
@@ -104,7 +104,7 @@ export default {
       formData.append("name", localStorage.getItem("name"));
       formData.append("weight", this.reportData.weight);
       formData.append("bloodPressure", this.reportData.bloodPressure);
-      formData.append("pregnancyWeek", this.reportData.pregnancyWeek);
+      formData.append("pregnancyWeek", this.reportData.Temperature);
       formData.append("symptoms", this.reportData.symptoms);
       formData.append("file", this.reportData.file);
       this.$axios

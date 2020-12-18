@@ -9,8 +9,8 @@
           v-on:click="startChat(notifi)"
         >
           <div>
-            <h6 class="mb-0 text-capitalize">dr. abdullah al mamun</h6>
-            <small class="text-muted">02:40AM 10 NOV, 2019</small>
+            <h6 class="mb-0 text-capitalize">Test Notification</h6>
+            <small class="text-muted">02:40AM 10 NOV, 2020</small>
           </div>
           <div class="ml-auto"></div>
         </div>

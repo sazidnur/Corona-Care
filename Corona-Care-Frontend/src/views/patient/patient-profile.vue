@@ -16,20 +16,25 @@
         </div>
         <div class="col-12 col-lg-4 px-lg-2">
           <div class="form-group mb-4">
-            <small class="text-muted" v-if="label.lastPeriodLabel">Last period*</small>
-            <small class="text-danger" v-if="errors.lastPeriod_err">{{errors.lastPeriod_err}}</small>
-            <DatePicker v-model="profileData.lastPeriod"></DatePicker>
+            <small class="text-muted" v-if="label.bloodLabel">Blood Group</small>
+            <small class="text-danger" v-if="errors.bloodLabel_err">{{errors.bloodLabel_err}}</small>
+            <input
+              type="text"
+              class="form-control shadow-none"
+              placeholder="Blood Group"
+              v-model="profileData.blood"
+            />
           </div>
         </div>
         <div class="col-12 col-lg-4 pl-lg-2">
           <div class="form-group mb-4">
-            <small class="text-muted" v-if="label.conciveNumberLabel">Concive number*</small>
-            <small class="text-danger" v-if="errors.conciveNumber_err">{{errors.conciveNumber_err}}</small>
+            <small class="text-muted" v-if="label.updateNumberLabel">Update Phone Number</small>
+            <small class="text-danger" v-if="errors.updateNumber_err">{{errors.updateNumber_err}}</small>
             <input
               type="number"
               class="form-control shadow-none"
-              placeholder="Your concive number"
-              v-model="profileData.conciveNumber"
+              placeholder="Phone Number"
+              v-model="profileData.updateNumber"
             />
           </div>
         </div>
@@ -59,7 +64,7 @@
         </div>
         <div class="col-12 col-lg-4 pl-lg-2">
           <div class="form-group file-group mb-4">
-            <small class="text-muted" v-if="label.fileLabel">Photo*</small>
+            <small class="text-muted" v-if="label.fileLabel">Photo</small>
             <small class="text-danger" v-if="errors.file_err">{{errors.file_err}}</small>
             <button type="button" class="btn btn-block file-btn shadow-none">
               <i class="fas fa-upload mr-2"></i> Select image
@@ -86,16 +91,15 @@
   </div>
 </template>
 <script>
-import DatePicker from "v-calendar/lib/components/date-picker.umd";
+//import DatePicker from "v-calendar/lib/components/date-picker.umd";
 export default {
   name: "patient-profile",
-  components: { DatePicker },
   data() {
     return {
       profileData: {
         age: "",
-        lastPeriod: new Date(),
-        conciveNumber: "",
+        blood: "",
+        updateNumber: "",
         height: "",
         weight: "",
         file: "",
@@ -103,16 +107,16 @@ export default {
       },
       label: {
         ageLabel: true,
-        lastPeriodLabel: true,
-        conciveNumberLabel: true,
+        bloodLabel: true,
+        updateNumberLabel: true,
         heightLabel: true,
         weightLabel: true,
         fileLabel: true
       },
       errors: {
         age_err: "",
-        lastPeriod_err: "",
-        conciveNumber_err: "",
+        bloodLabel_err: "",
+        updateNumber_err: "",
         height_err: "",
         weight_err: "",
         file_err: ""
@@ -124,21 +128,18 @@ export default {
       if (!this.profileData.age) {
         this.label.ageLabel = false;
         this.errors.age_err = "Age is required*";
-      } else if (!this.profileData.lastPeriod) {
-        this.label.lastPeriodLabel = false;
-        this.errors.lastPeriod_err = "Last period date is required*";
-      } else if (!this.profileData.conciveNumber) {
-        this.label.conciveNumberLabel = false;
-        this.errors.conciveNumber_err = "Concive number is required*";
+      } else if (!this.profileData.blood) {
+        this.label.bloodLabel = false;
+        this.errors.bloodLabel_err = "Blood Group is required*";
+      } else if (!this.profileData.updateNumber) {
+        this.label.updateNumberLabel = false;
+        this.errors.updateNumber_err = "Phone number error";
       } else if (!this.profileData.height) {
         this.label.heightLabel = false;
         this.errors.height_err = "Height is required*";
       } else if (!this.profileData.weight) {
         this.label.weightLabel = false;
         this.errors.weight_err = "Weight is required*";
-      } else if (!this.profileData.file) {
-        this.label.fileLabel = false;
-        this.errors.file_err = "Image is required*";
       } else {
         this.errors = false;
         this.label = true;

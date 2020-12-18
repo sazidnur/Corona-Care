@@ -3,7 +3,7 @@
     <div class="chat-nav p-3 border-bottom text-right">
       <ul class="list-inline mb-0">
         <li class="list-inline-item">
-          <router-link to="/patient">Profile</router-link>
+          <router-link to="/">Home</router-link>
         </li>
         <li class="list-inline-item">
           <button type="button" class="btn btn-sm btn-light shadow-none">Logout</button>
@@ -12,7 +12,7 @@
     </div>
 
     <div class="sender-profile border-right d-none d-lg-block mb-lg-3" v-if="patient">
-      <img src="../../assets/static/patient.png" class="rounded-circle mb-3" />
+      <img src="../../assets/static/patient.jpg" class="rounded-circle mb-3" />
       <h5 class="text-capitalize mb-0">{{patient.fullname}}</h5>
       <p>{{patient.phone}}</p>
       <div class="text-left px-lg-3">
@@ -20,7 +20,7 @@
         <div class="information py-3">
           <p class="mb-0">BP: {{patientinfo.bloodPressure}}</p>
           <p class="mb-0">Weight: {{patientinfo.weight}}</p>
-          <p class="mb-0">Pregnancy week: {{patientinfo.pregnancyWeek}}</p>
+          <p class="mb-0">Temperature: {{patientinfo.pregnancyWeek}}</p>
         </div>
       </div>
       <div class="text-left px-lg-3">
