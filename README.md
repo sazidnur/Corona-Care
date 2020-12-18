@@ -1,11 +1,15 @@
 # Corona-Care
 
-Frontend: Vue
-Backend: node.js
-Database: MongoDB
+*Frontend: Vue
 
-run api
+*Backend: node.js
+
+*Database: MongoDB
+
+*run api
+
 npm start
 
-run frontend
-npm run server
+*run frontend
+
+npm run serve
